@@ -13,6 +13,9 @@ namespace LearnHubMAUI
 				{
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+					fonts.AddFont("SignikaNegative-Bold.ttf", "SignNegBold");
+					fonts.AddFont("SignikaNegative-Regular.ttf", "SignNegRegular");
+					fonts.AddFont("fontawesome-webfont.ttf", "FontAwesome");
 				});
 
 #if DEBUG

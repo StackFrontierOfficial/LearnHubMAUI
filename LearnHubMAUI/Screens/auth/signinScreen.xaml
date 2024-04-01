@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnHubMAUI.Screens.auth.signinScreen"
+             Title="signinScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid RowDefinitions="*,*" HeightRequest="200">
+            <Image Grid.RowSpan="2"
+                   Source="appbar_bg.png"
+                   Aspect="Fill"/>
+            <Label Grid.Row="1"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   Margin="20,0,0,20"
+                   Text="Sign in"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontFamily="SignNegBold"
+                   FontSize="20"/>
+        </Grid>
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Margin="20,20,20,0" Spacing="10" >
+                <Entry Placeholder="UserName"
+                       Margin="0,20,0,0"
+                       PlaceholderColor="{StaticResource Gray300}"/>
+                <StackLayout Padding="0,0,10,0" Orientation="Horizontal">
+                    <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password"  WidthRequest="320"/>
+                    <ImageButton Clicked="TogglePasswordVisibility"
+                                 Margin="-30,0,0,0"
+                                 Source="{Binding EyeIcon}" HeightRequest="24" WidthRequest="24" />
+                </StackLayout>
+                <Button Text="Sign in"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontFamily="SignNegBold"
+                        FontSize="18"
+                        Margin="0,20,0,0"
+                        WidthRequest="310"
+                        BackgroundColor="#FEC226"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Padding="0,0,0,0"/>
+                <Button Text="Sign up"
+                        TextColor="{StaticResource Gray500}"
+                        FontAttributes="Bold"
+                        FontFamily="SignNegBold"
+                        FontSize="16"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Padding="0,0,0,0"/>
+                <Button Text="Forget Your Password?"
+                        TextColor="{StaticResource Gray500}"
+                        FontAttributes="Bold"
+                        FontFamily="SignNegBold"
+                        FontSize="16"
+                        Margin="0,-15,0,0"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Padding="0,0,0,0"/>
+                <Frame BackgroundColor="#395898"
+                       WidthRequest="310"
+                       HeightRequest="60"
+                       Padding="0,0,0,0"
+                       Margin="0,20,0,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Image Source="facebook.png"
+                               WidthRequest="20"
+                               HeightRequest="20"/>
+                        <Button Text="Log in with Facebook"
+                                TextColor="White"
+                                FontAttributes="Bold"
+                                Padding="10,0,0,0"
+                                FontFamily="SignNegBold"
+                                FontSize="15"
+                                BackgroundColor="Transparent"
+                                BorderColor="Transparent"
+                                HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="google.png"
+           WidthRequest="20"
+           HeightRequest="20"/>
+                    <Button Text="Log in with Google"
+            TextColor="Black"
+            FontAttributes="Bold"
+            Padding="10,0,0,0"
+            FontFamily="SignNegBold"
+            FontSize="15"
+            BackgroundColor="Transparent"
+            BorderColor="Transparent"
+            HorizontalOptions="Center"/>
+                </StackLayout>
+            </VerticalStackLayout>
+        </ScrollView>
+        
+    </Grid>
+</ContentPage>

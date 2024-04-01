@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnHubMAUI.Screens.appSetting.appSettingScreen"
+             Title="appSettingScreen">
+    <Grid RowDefinitions=".7*,.3*">
+        <VerticalStackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Margin="20,100,20,0">
+            <CarouselView ItemsSource="{Binding carouselImages}" 
+                          VerticalOptions="Center" 
+                          IndicatorView="indicatorView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Title}"
+                           TextColor="Black"
+                           FontSize="20"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center"
+                           FontFamily="SignNegBold"/>
+                            <Image Source="{Binding StartImage}"
+                           Aspect="AspectFill"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           WidthRequest="250"
+                           HeightRequest="250"/>
+                            <Label Text="{Binding ImageText}"
+                           TextColor="{StaticResource Gray300}"
+                           FontSize="16"
+                            VerticalOptions="Center"
+                           Margin="30,20,40,0"
+                           HorizontalTextAlignment="Center"
+                             HorizontalOptions="Center"
+                           FontFamily="SignNegRegular"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </VerticalStackLayout>
+        <Frame Grid.Row="1"
+               BorderColor="Transparent"
+               BackgroundColor="#FAFAFA"
+               Padding="0,0,0,0"
+               IsVisible="False"
+               HeightRequest="50"
+               VerticalOptions="End">
+            <Grid ColumnDefinitions=".2*,.6*,.2*" VerticalOptions="Center">
+                <Button Text="Skip"
+                        TextColor="#FEC226"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Padding="0,0,0,0"/>
+                <IndicatorView x:Name="indicatorView"
+                               Grid.Column="1"
+                               IndicatorColor="{StaticResource Gray200}"
+                               IndicatorSize="5"
+                               SelectedIndicatorColor="Black"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"/>
+                <Button Text="Next"
+                        TextColor="#FEC226"
+                        Grid.Column="2"
+                        BackgroundColor="Transparent"
+                        BorderColor="Transparent"
+                        HorizontalOptions="Center"
+                        Padding="0,0,0,0"/>
+            </Grid>
+        </Frame>
+        <Frame Grid.Row="1"
+               BorderColor="Transparent"
+               BackgroundColor="#FEC226"
+               Padding="0,0,0,0"
+               IsVisible="true"
+               HeightRequest="50"
+               VerticalOptions="End">
+                    <Button Text="Get Started Now"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            BorderColor="Transparent"
+                            HorizontalOptions="Center"
+                            Padding="0,0,0,0"/>
+        </Frame>
+    </Grid>
+    
+</ContentPage>

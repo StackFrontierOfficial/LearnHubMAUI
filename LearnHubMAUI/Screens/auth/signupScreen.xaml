@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnHubMAUI.Screens.auth.signupScreen"
+             Title="signupScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid RowDefinitions="*,*" HeightRequest="200">
+            <Image Grid.RowSpan="2"
+                   Source="appbar_bg.png"
+                   Aspect="Fill"/>
+            <ImageButton Source="back.png"
+                         VerticalOptions="Start"
+                         HorizontalOptions="Start"
+                         WidthRequest="20"
+                         HeightRequest="20"
+                         Margin="20,20,0,0"/>
+            <Label Grid.Row="1"
+                   VerticalOptions="End"
+                   HorizontalOptions="Start"
+                   Margin="20,0,0,20"
+                   Text="Sign up"
+                   TextColor="Black"
+                   FontAttributes="Bold"
+                   FontFamily="SignNegBold"
+                   FontSize="20"/>
+            
+        </Grid>
+        <VerticalStackLayout Margin="20,20,20,0" Spacing="10" Grid.Row="1">
+            <Entry Placeholder="UserName"
+            Margin="0,20,0,0"
+            PlaceholderColor="{StaticResource Gray300}"/>
+            <Entry Placeholder="Email"
+                   Margin="0,10,0,0"
+                   PlaceholderColor="{StaticResource Gray300}"/>
+            <Entry Placeholder="Phone number"
+                   Margin="0,10,0,0"
+                   PlaceholderColor="{StaticResource Gray300}"/>
+            <StackLayout Padding="0,0,10,0" Orientation="Horizontal" Margin="0,10,0,0">
+                <Entry x:Name="passwordEntry" IsPassword="True" Placeholder="Password" PlaceholderColor="{StaticResource Gray300}" WidthRequest="320"/>
+                <ImageButton Clicked="TogglePasswordVisibility"
+                      Margin="-30,0,0,0"
+                      Source="{Binding EyeIcon}" HeightRequest="24" WidthRequest="24" />
+            </StackLayout>
+            <StackLayout Padding="0,0,10,0" Orientation="Horizontal" Margin="0,10,0,0">
+                <Entry x:Name="confirmPasswordEntry" IsPassword="True" PlaceholderColor="{StaticResource Gray300}" Placeholder="Confirm Password"  WidthRequest="320"/>
+                <ImageButton Clicked="ToggleConfirmPasswordVisibility"
+                             Margin="-30,0,0,0"
+                             Source="{Binding EyeIcon}" HeightRequest="24" WidthRequest="24" />
+            </StackLayout>
+            <Button Text="Sign up"
+                    TextColor="Black"
+                    FontAttributes="Bold"
+                    FontFamily="SignNegBold"
+                    FontSize="18"
+                    Margin="0,20,0,0"
+                    WidthRequest="310"
+                    BackgroundColor="#FEC226"
+                    BorderColor="Transparent"
+                    HorizontalOptions="Center"
+                    Padding="0,0,0,0"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
