@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LearnHubMAUI.Screens.home.ArtPhotographyScreen"
+             Title="ArtPhotographyScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Frame BackgroundColor="#FEC226"
+               HeightRequest="60"
+               Padding="0,0,0,0"
+               BorderColor="Transparent"
+               CornerRadius="0">
+            <HorizontalStackLayout Margin="20,0,0,0" Background="#FEC226" Spacing="20">
+                <ImageButton Source="back.png"
+                             WidthRequest="20"
+                             HeightRequest="20"/>
+                <Label Text="Art &amp; Photography"
+                       TextColor="Black"
+                       FontSize="20"
+                       VerticalOptions="Center"
+                       FontAttributes="Bold"
+                       FontFamily="SignNegBold"/>
+            </HorizontalStackLayout>
+        </Frame>
+        <ListView Grid.Row="1" ItemsSource="{Binding artLists}"
+                  HasUnevenRows="True" 
+                  SeparatorVisibility="None" 
+                  SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BackgroundColor="White"
+                               BorderColor="{StaticResource Gray100}"
+                               HasShadow="True"
+                               Padding="10,10,10,10"
+                               HeightRequest="100">
+                            <Grid ColumnDefinitions=".4*,.6*">
+                                <Frame BackgroundColor="Transparent"
+                                       BorderColor="Transparent"
+                                       Padding="0,0,0,0"
+                                       CornerRadius="20">
+                                    <Image Source="{Binding BookImage}"
+                                           Aspect="Fill"/>
+                                </Frame>
+                                <VerticalStackLayout Grid.Column="1" Margin="5,0,0,0" Spacing="5">
+                                    <Label Text="{Binding Title}"
+                                           TextColor="Black"
+                                           FontSize="17"
+                                           FontAttributes="Bold"
+                                           FontFamily="SignNegBold"/>
+                                    <Label Text="{Binding Amount}"
+                                           TextColor="Black"
+                                           FontSize="14"
+                                           FontAttributes="Bold"
+                                           FontFamily="SignNegBold"/>
+                                    <StackLayout Orientation="Horizontal" Spacing="5">
+                                        <Label Text="{Binding Rating}"
+                                               TextColor="Black"
+                                               FontSize="12"
+                                               FontAttributes="Bold"
+                                               FontFamily="SignNegBold"/>
+                                        <Label Text="&#xf005;"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="Black"
+                                               FontFamily="FontAwesome"/>
+                                    </StackLayout>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</ContentPage>

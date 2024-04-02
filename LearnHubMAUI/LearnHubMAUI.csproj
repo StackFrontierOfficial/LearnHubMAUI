@@ -60,6 +60,7 @@
 	  <None Remove="Resources\Fonts\fontawesome-webfont.ttf" />
 	  <None Remove="Resources\Images\back.png" />
 	  <None Remove="Resources\Images\hide.png" />
+	  <None Remove="Resources\Images\notification.png" />
 	  <None Remove="Resources\Images\view.png" />
 	</ItemGroup>
 
@@ -107,6 +108,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Screens\course\coursesScreen.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Screens\home\ArtPhotographyScreen.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Screens\home\homeScreen.xaml">
